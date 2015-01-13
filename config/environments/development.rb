@@ -169,7 +169,7 @@ Rails.application.configure do
    port:                  587,
    domain:               'google.com',
    user_name:            'abhishek.kumar@mobiloittegroup.com',
-   password:             'abhimobiloitte',
+   password:             'xxxxxxxxxx',
    authentication:       'plain',
    enable_starttls_auto: true  }
  end
