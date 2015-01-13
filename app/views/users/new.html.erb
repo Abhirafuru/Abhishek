@@ -1,0 +1,56 @@
+<h1>Sign Up Form </h1>
+	
+<% if @user.errors.any? %>
+	<div>
+		<div>
+			 The form contains <%= pluralize(@user.errors.count,
+			  "error") %>.
+		</div>
+		<ul>
+			<% @user.errors.full_messages.each do |msg| %>
+					<li>* <%= msg %></li>
+			<% end %>
+		</ul>
+	</div>
+<% end %>
+<%= form_for @user, :html => {:multipart => true}, url: users_path do |f| -%> 
+    <p>
+       <%= f.label :name %>
+	   <%= f.text_field :name %><br/>
+	</br>
+	</p>
+	<p>
+	  	 <%= f.label :email %>
+	    <%= f.text_field :email %><br/>
+	</p>
+	</br>
+	<p>
+	  <%= f.label :password %>
+	  <%= f.password_field :password %><br/>
+	</p>
+	</br>
+	<p>
+ 	    <%= f.label :dob %>
+        <%= f.date_select(:dob,:start_year => 1990) %><br/>
+	</p>
+</br>
+	<p>
+	  <%= f.label :image,"Upload Image" %>
+	  <%= image_tag(@user.image_url) if @user.image? %>
+    
+    <%#= f.hidden_field :image_cache %>
+	    <%= f.file_field :image %>
+	</p>
+</br>
+	
+  
+	  <%#= f.text_field :dob, :id=>"datepicker"%>
+	 
+		<%= f.submit %>
+
+	<% end %>
+
+<p>
+
+
+</p>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Finaletest</title>
+The time now is <%= Time.now %>
+
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+
+<%#= link_to image_tag("7.jpg", :width =>1500, :height =>100) %>
+<%#= link_to image_tag("index.jpeg", :width =>1500, :height =>200) %>
+   <link rel="stylesheet" href="//code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css">
+   <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+   <script src="//code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
+</head>
+<body>
+
+	 <div id="user_nav", style = "float: right;">  
+     <b> <% if current_user %>  
+
+        Logged in as <%= current_user.email %> </b> 
+        <%#= link_to 'Edit', edit_user_path(@user) %> 
+        <%= link_to "Profile",user_path(current_user)%>  |
+        <%#= link_to 'All Users', users_path %> |
+        <%= link_to "Log out", logout_path %>  | 
+
+        <%#= link_to 'Home', user_blogs_path(current_user) %> 
+        
+        <%#= link_to "Recent Users List",users_path%> 
+      <% else %>  
+        <%= link_to "Sign up", signup_path %> |   
+        <%= link_to "Log in", login_path %> 
+        |<%= link_to "Sign in with Facebook", "/auth/facebook" %> |
+        <%= link_to "Sign in with Twitter", "/auth/twitter" %>
+       <% end %>  
+    </div>
+<p class="notice"><%= notice %></p>
+<%= yield %>
+
+</body>
+
+</html>

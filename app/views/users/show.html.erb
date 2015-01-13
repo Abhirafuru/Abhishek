@@ -1,0 +1,23 @@
+<p><h1>Hi <%= @user.name %> </h1>That's Ur Details</p>
+Name:<%= @user.name %><br>
+Email:<%= @user.email %><br>
+Dob:<%= @user.dob %><br>
+<p>
+
+<%#= image_tag(@user.image_url(:small_thumb).to_s)  %>
+<%#= image_tag(@user.image.url(:banner))  %>
+<%#= image_tag(@user.image.url(:thumb1))  %>
+<%#= image_tag painting.image_url(:thumb).to_s %>
+
+<%#= image_tag @user.image.url((:thumbnail),:alt => "Sample Image") %>
+<%#= image_tag @user.image.url(:mini_thumbnail) %>
+<%= image_tag (@user.image.url(:detail)) %>
+
+</p>
+<%= link_to 'Logout', logout_path %>
+<%= link_to 'Edit', edit_user_path(@user) %> 
+<%= link_to 'All Users', users_path %>
+
+
+
+

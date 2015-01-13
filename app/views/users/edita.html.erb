@@ -1,0 +1,30 @@
+<h1>Editing user</h1>
+<%= form_for @user do |f|%>
+  <% if @user.errors.any? %>
+  
+      <h2>Form is invalid</h2>  
+      
+        <% for message in @user.errors.full_messages %>  
+          <li><%= message %></li>  
+        <% end %>  
+       
+     
+  <% end %>
+   <p>  
+    <%= f.label :name %><br />  
+    <%= f.text_field :name %>  
+  </p>
+  <p>  
+    <%= f.label :email %><br />  
+    <%= f.text_field :email %>  
+  </p>    
+   <p>  
+    <%= f.label :password %><br />  
+    <%= f.text_field :password %>  
+  </p> 
+  <p>  
+    <%= f.label :dob %> <br />  
+    <%=  f.date_select(:dob)%>  
+  </p>  
+  <%= f.submit "Update" %></p>  
+<% end %>  

@@ -1,0 +1,26 @@
+
+ <h1>Log in</h1>
+
+<%= form_for(:session, url: sessions_path) do |f| %>
+<p>
+  <%= label_tag :email %>
+  <%= text_field_tag :email, params[:email] %><br>
+</p></br>
+<p>
+  <%= label_tag :password %>
+  <%= password_field_tag :password %><br>
+</p></br>
+<p>
+  <%= label_tag :remember_me %>
+  <%= check_box_tag :remember_me, 1, params[:remember_me] %>
+</p></br>
+<p>
+  <%= submit_tag "Log in" %>
+</p>
+<p></br>
+	<%= link_to "forgot password?", new_password_reset_path %>
+</p>
+<% end %>
+<p>
+	<%= link_to "sign up", signup_path %>
+</p>
